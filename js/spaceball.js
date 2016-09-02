@@ -1,24 +1,25 @@
 var ctx = null,
-	background = null,
-	platform = new Array();
-	ball = null;
+    background = null,
+    platform = new Array();
+    ball = null;
 
 window.onload = function () {
-	ctx = document.getElementById("spaceball").getContext("2d");
+    ctx = document.getElementById("spaceball").getContext("2d");
 
-	var img = new Image();
-	img.src = "images/space.jpg";
-	background = new Background(img);
+    var img = new Image();
+    img.src = "images/space.jpg";
+    background = new Background(img);
 
-	tick();
+    ball = new Ball();
+
+    tick();
 }
 
 function tick() {
-	background.tick();
-	animateBall();
-	animatePlatform();
+    background.tick();
+    ball.tick();
 
-	window.requestAnimationFrame(tick);
+    window.requestAnimationFrame(tick);
 }
 
 function animateBall() {
