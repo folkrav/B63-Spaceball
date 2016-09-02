@@ -1,0 +1,11 @@
+html {
+    background-color: #111F5E;
+}
+
+#container {
+    width: 500px;
+    height: 450px;
+    margin: 100px auto;
+    border: 1px solid darkgrey;
+    filter: drop-shadow(0 0 32px #77A7F1);
+}
