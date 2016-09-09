@@ -1,6 +1,6 @@
 function Background(bgImage) {
     this.bgImage = bgImage;
-};
+}
 
 Background.prototype.tick = function() {
     if (this.bgImage.complete) {
@@ -9,9 +9,9 @@ Background.prototype.tick = function() {
         var height = this.bgImage.height / scaling;
         var translateX = (this.bgImage.width - width) / 2;
         var translateY = (this.bgImage.height - height) / 2;
-        
+
         ctx.translate(translateX, translateY);
         ctx.drawImage(this.bgImage, 0, 0, width, height);
         ctx.translate(-translateX, -translateY);
     }
-};
+}

@@ -35,7 +35,7 @@ window.onload = function () {
 
     // Start tick loop
     tick();
-};
+}
 
 function tick() {
     if (alive) {
@@ -50,7 +50,7 @@ function tick() {
         ctx.fillStyle = "red";
         ctx.fillText("You're dead!", 75, 250, 500);
     }
-};
+}
 
 function managePlatform() {
     for (var i = 1; i < platform.length; i++) {
@@ -64,7 +64,7 @@ function managePlatform() {
     if (ball.x >= platform[0].x + 500) {
         platform.shift();
     }
-};
+}
 
 function movement() {
     if (leftPushed) {
@@ -97,10 +97,10 @@ document.onkeydown = function (e) {
     if (e.which == 65)      leftPushed = true;
     else if (e.which == 68) rightPushed = true;
     else if (e.which == 32) spacePushed = true;
-};
+}
 
 document.onkeyup = function (e) {
     if (e.which == 65)      leftPushed = false;
     else if (e.which == 68) rightPushed = false;
     else if (e.which == 32) spacePushed = false;
-};
+}

@@ -4,7 +4,7 @@ function Ball(x, y, radius) {
     this.radius = radius;
     this.speed = 3;
     this.accel = 0.5;
-};
+}
 
 Ball.prototype.tick = function() {
     this.speed += this.accel;
@@ -24,7 +24,7 @@ Ball.prototype.tick = function() {
     }
 
     this.draw();
-};
+}
 
 Ball.prototype.checkCollision = function () {
     for (var i = 0; i < platform.length; i++) {
@@ -35,7 +35,7 @@ Ball.prototype.checkCollision = function () {
         }
     }
     return false;
-};
+}
 
 Ball.prototype.draw = function () {
     ctx.beginPath();
@@ -46,4 +46,4 @@ Ball.prototype.draw = function () {
     ctx.strokeStyle = '#003300';
     ctx.stroke();
     ctx.closePath();
-};
+}
