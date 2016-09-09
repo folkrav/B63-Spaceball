@@ -45,4 +45,5 @@ Ball.prototype.draw = function () {
     ctx.lineWidth = 2;
     ctx.strokeStyle = '#003300';
     ctx.stroke();
+    ctx.closePath();
 };

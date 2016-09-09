@@ -26,13 +26,12 @@ window.onload = function () {
     background = new Background(img);
 
     for (var i = 0; i < 150; i++) {
-        // force a platform in the first blocks
     	if (Math.random() > 0.2 || i <= 3) {
     		platform.push(new Block(i * blockSize));
     	}
     }
 
-    ball = new Ball(50, 150, ballSize);
+    ball = new Ball(60, 150, ballSize);
 
     // Start tick loop
     tick();
@@ -59,7 +58,7 @@ function managePlatform() {
     }
 
     var lastBlock = platform[platform.length - 1];
-    if (ball.x >= lastBlock.x - 1000) {
+    if (ball.x >= lastBlock.x - 500) {
         platform.push(new Block(lastBlock.x + blockSize));
     }
     if (ball.x >= platform[0].x + 500) {
