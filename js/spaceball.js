@@ -1,7 +1,7 @@
     // Sprites
 var ctx = null,
     background = null,
-    platform = new Array();
+    platform = new Array(),
     ball = null,
 
     // Key listeners
@@ -10,8 +10,8 @@ var ctx = null,
     spacePushed = false,
 
     // Sprite settings
-    alive = true;
-    blockSize = 30,
+    alive = true,
+    blockSize = 40,
     blockY = 375,
     ballSize = 20,
     moveSpeed = 5;
@@ -62,19 +62,26 @@ function managePlatform() {
     if (ball.x >= lastBlock.x - 1000) {
         platform.push(new Block(lastBlock.x + blockSize));
     }
-    if (ball.x >= platform[0].x + 1000) {
+    if (ball.x >= platform[0].x + 500) {
         platform.shift();
     }
 };
 
 function movement() {
     if (leftPushed) {
-        console.log("left");
-        ball.x -= moveSpeed;
+        if (ball.x >= ballSize) {
+            ball.x -= moveSpeed;
+        }
     }
     if (rightPushed) {
-        console.log("right");
-        ball.x += moveSpeed;
+        if (ball.x >= 300) {
+            for (var i = 0; i < platform.length; i++) {
+                platform[i].x -= moveSpeed;
+            }
+        }
+        else {
+            ball.x += moveSpeed;
+        }
     }
     if (spacePushed) {
         var jumpHeight = 15;
@@ -88,7 +95,6 @@ function movement() {
 }
 
 document.onkeydown = function (e) {
-    console.log(e.which);
     if (e.which == 65)      leftPushed = true;
     else if (e.which == 68) rightPushed = true;
     else if (e.which == 32) spacePushed = true;
